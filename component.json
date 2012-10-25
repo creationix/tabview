@@ -1,0 +1,15 @@
+{
+  "name": "tabview",
+  "description": "A simple layout component tabs",
+  "version": "0.0.1",
+  "main": "tabview.js",
+  "dependencies": {
+    "creationix/font-awesome": "*"
+  },
+  "scripts": [
+    "tabview.js"
+  ],
+  "styles": [
+    "tabview.css"
+  ]
+}

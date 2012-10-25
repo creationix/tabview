@@ -1,0 +1,38 @@
+.tabview {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.tabview > * {
+  display: inline-block;
+  overflow: hidden;
+  margin: 3px 1px 0 1px;
+  border-color: #aaa;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  border-radius: 4px 4px 0 0;
+  background-color: #eee;
+  cursor: pointer;
+  color: #000;
+  opacity: 0.4;
+  padding: 0 3px;
+}
+.tabview > div > *:first-child {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 2px;
+}
+
+.tabview > div > a:hover {
+  color: #800;
+}
+
+
+.tabview > div:hover {
+  opacity: 0.75;
+}
+
+.tabview > div.selected {
+  opacity: 1.0;
+  font-weight: bold;
+}
