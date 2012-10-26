@@ -55,6 +55,15 @@ TabView.prototype.resize = function (width, height) {
 TabView.prototype.add = function (label) {
   var self = this;
   var tab = { label: label };
+  label.select = function () {
+    self.select(tab);
+  };
+  label.deselect = function () {
+    self.desekect(tab);
+  };
+  label.remove = function () {
+    self.remove(tab);
+  };
   this.tabs.push(tab);
   tab.el = document.createElement('div');
   this.el.appendChild(tab.el);
@@ -77,19 +86,7 @@ TabView.prototype.add = function (label) {
   closeButton.addEventListener("click", function (evt) {
     evt.preventDefault();
     evt.stopPropagation();
-    if (!tab.label.close()) {
-      var index = self.tabs.indexOf(tab);
-      if (tab === self.selected) {
-        self.deselect(tab);
-        var next = self.tabs[index + 1] || self.tabs[index - 1];
-        if (next) {
-          self.select(next);
-        }
-      }
-      self.tabs.splice(index, 1);
-      self.el.removeChild(tab.el);
-      self.resize();
-    }
+    self.remove(tab);
   }, true);
 
 
@@ -114,9 +111,17 @@ TabView.prototype.select = function (tab) {
 };
 
 TabView.prototype.remove = function (tab) {
-  var index = this.tabs.indexOf(tab);
-  if (index < 0) return;
-  this.tabs.splice(index, 1);
-  this.el.removeChild(tab.el);
-  this.refresh();
+  if (!tab.label.close()) {
+    var index = this.tabs.indexOf(tab);
+    if (tab === this.selected) {
+      this.deselect(tab);
+      var next = this.tabs[index + 1] || this.tabs[index - 1];
+      if (next) {
+        this.select(next);
+      }
+    }
+    this.tabs.splice(index, 1);
+    this.el.removeChild(tab.el);
+    this.resize();
+  }
 };
