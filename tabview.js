@@ -22,10 +22,10 @@ TabView.prototype.resize = function (width, height) {
   }
 
   this.el.style.width = width + "px";
-  this.el.style.height = height + "px";
+  this.el.style.height = (height - 1) + "px";
 
   var i, l = this.tabs.length;
-  var space = width - l * 10;
+  var space = width - l * 8;
   var lineHeight = (height - 4) + "px";
   for (i = 0; i < l; i++) {
     var maxWidth = Math.floor(space / (l - i));
