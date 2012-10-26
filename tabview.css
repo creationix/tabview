@@ -18,7 +18,7 @@
   padding: 0 3px;
 }
 .tabview > div > *:first-child {
-  display: inline-block;
+  display: inline;
   overflow: hidden;
   margin-right: 2px;
 }
