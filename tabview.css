@@ -10,7 +10,7 @@
   overflow: hidden;
   margin: 2px 1px 0 1px;
   border: 1px solid #aaa;
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
   background-color: #fff;
   cursor: pointer;
   color: #000;
@@ -23,8 +23,13 @@
   margin-right: 2px;
 }
 
+.tabview > div > a {
+  color: #888;
+  font-size: 80%;
+  padding: 2px;
+}
 .tabview > div > a:hover {
-  color: #800;
+  color: #d44;
 }
 
 
