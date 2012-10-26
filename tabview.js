@@ -9,14 +9,23 @@ function TabView(el) {
     this.height = null;
 }
 
+function isNumber(value) {
+  return typeof value === "number" && !isNaN(value);
+}
+
 TabView.prototype.resize = function (width, height) {
 
   if (arguments.length === 0) {
-    if (this.width === null) return;
+    if (!isNumber(this.width) || !isNumber(this.height)) {
+      return;
+    }
     width = this.width;
     height = this.height;
   }
   else {
+    if (!isNumber(width) || !isNumber(height)) {
+      throw new TypeError("width and height must be numbers");
+    }
     this.width = width;
     this.height = height;
   }
