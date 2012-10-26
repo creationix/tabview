@@ -17,8 +17,11 @@
   opacity: 0.6;
   padding: 0 3px;
 }
+.tabview > div > * {
+  display: inline-block;
+  height: inherit;
+}
 .tabview > div > *:first-child {
-  display: inline;
   overflow: hidden;
   margin-right: 2px;
 }
