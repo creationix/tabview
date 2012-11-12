@@ -5,17 +5,15 @@
   font-size: 0.8em;
   border-bottom: 1px solid #aaa;
 }
+.tabview > div.selected {
+  background-color: #aaa;
+  color: #000;
+}
 .tabview > * {
   display: inline-block;
   overflow: hidden;
-  margin: 2px 1px 0 1px;
-  border: 1px solid #aaa;
-  border-radius: 6px 6px 0 0;
-  background-color: #fff;
   cursor: pointer;
-  color: #000;
-  opacity: 0.6;
-  padding: 0 3px;
+  padding: 2px 5px;
 }
 .tabview > div > * {
   display: inline-block;
@@ -35,12 +33,3 @@
   color: #d44;
 }
 
-
-.tabview > div:hover {
-  opacity: 0.8;
-}
-
-.tabview > div.selected {
-  opacity: 1.0;
-  border-bottom: 1px solid #fff;:
-}
